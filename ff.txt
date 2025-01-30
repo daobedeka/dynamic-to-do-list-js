@@ -1,0 +1,38 @@
+/*document.addEventListener('DOMContentLoaded', function (){
+    const addButton=document.getElementById('add-task-btn');
+    const taskInput=document.getElementById('task-input');
+    const taskList=document.getElementById('task-list');
+   
+    addButton.addEventListener('click', addTask())
+
+    function addTask(){
+        const taskText=taskInput.value.trim()
+      
+          console.log(taskInput)
+        if (taskText == ""){
+            alert('Enter a task')
+        }
+        else{
+            const li=document.createElement('li')
+            li.textContent=taskText;
+            const button_remove=document.createElement('button');
+            button_remove.textContent="Remove";
+            button_remove.classList.add('remove-btn');
+            document.getElementById('remove-btn').addEventListener('click',function(){
+                li.remove();
+            })
+
+            li.appendChild(button_remove);
+            taskList.appendChild(li)
+            taskInput.value='';
+
+
+        }
+
+
+    }
+
+  
+
+})*/
+
