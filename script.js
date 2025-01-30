@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     
     function addTask( ){
-        let taskText=taskInput.value;
+        let taskText=taskInput.value.trim();
         if(!taskText|taskText==" "){
             alert(' enter a task')
         }
