@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function(){
+   let storedTask= JSON.parse( localStorage.getItem('tasks')||'[ ]' );
+   
     const addButton=document.getElementById('add-task-btn');
     const taskInput=document.getElementById('task-input');
     const taskList=document.getElementById('task-list');
-    //const addTaskBtn=document.getElementById("add-task-btn" )
+
     
     taskInput.addEventListener( 'keypress' ,(event) =>{
      if(event.key == 'Enter')
@@ -20,9 +22,26 @@ document.addEventListener('DOMContentLoaded', function(){
             alert(' enter a task')
         }
         else{
-                 console.log(taskText);
+             
+           
+            if(storedTask.includes(taskText)){
+            }
+            else{
+                storedTask.push(taskText)
+                console.log(storedTask)
+            }
+
             let li=document.createElement("li");
-            li.textContent=taskText;
+
+            for(i=0;i<storedTask.lenght;i++){
+              
+               
+                console.log(storedTask[i])
+
+            }
+
+       
+           
             console.log(li);
     
             let btRemove=document.createElement('button')
