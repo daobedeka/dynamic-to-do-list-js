@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function(){
-   let storedTask= JSON.parse( localStorage.getItem('tasks')||'[ ]' );
+   loadTasks();
    
     const addButton=document.getElementById('add-task-btn');
     const taskInput=document.getElementById('task-input');
     const taskList=document.getElementById('task-list');
 
-    
+
+
+
     taskInput.addEventListener( 'keypress' ,(event) =>{
      if(event.key == 'Enter')
         addButton.click( );
@@ -23,24 +25,9 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         else{
              
-           
-            if(storedTask.includes(taskText)){
-            }
-            else{
-                storedTask.push(taskText)
-                console.log(storedTask)
-            }
-
-            let li=document.createElement("li");
-
-            for(i=0;i<storedTask.lenght;i++){
-              
                
-                console.log(storedTask[i])
-
-            }
-
-       
+                let li=document.createElement("li");    
+                li.textContent=taskText;
            
             console.log(li);
     
@@ -61,4 +48,10 @@ document.addEventListener('DOMContentLoaded', function(){
     document.activeElement('DOMContentLoaded', addTask( ))
 
 } )
+
+    function loadTasks(){
+        const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+        storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
+
+    }
 
